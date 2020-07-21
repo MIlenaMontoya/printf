@@ -8,3 +8,6 @@ printf is a function of the standard library <stdio.h>, this function is used to
 ```bash
 int _printf(const char *format, ...)
 ```
+
+## printf man
+
