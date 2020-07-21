@@ -1,4 +1,4 @@
-![HolbertonSchool](https://www.holbertonschool.com/holberton-logo.png) 
+![HolbertonSchool](https://www.holbertonschool.com/holberton-logo.png)
 
 # Printf
 
