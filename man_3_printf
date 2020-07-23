@@ -1,1 +1,66 @@
-pendiente manual
+.TH man_printf "July 22, 2020" "1.0" "_ printf functions man page"
+.SH NAME
+.B _printf - used to print any type of character on screen, according \
+to a given data type in its format
+.SH SYNOPSIS
+.B #include "holberton.h"
+
+.B prototype - syntax
+
+int _printf (const char * format, ...)
+
+.B _printf
+.I FORMAT (String) [ARGUMENT] ...
+.SH DESCRIPTION
+printf receives a number of parameters. The first parameter is fixed in the format string. This carries the text to be printed.
+
+
+.B This function is compiled with gcc flags
+
+gcc -Wall -Werror -Wextra -pedantic * .c
+.SH RETURN VALUE
+Returns an integer with the number of characters passed and ignores the null character at the end of the string.
+
+If the parameters given to the function fail, its return value is
+.BI -1.
+
+.SH format string
+
+It is a character string that begins and ends with double quotes, it is made up of 0 or more directives, for each format order it must have an argument, so the identifier must be related to the type of variable in the argument.
+.SH Conversion Specifier
+Each conversion specification is entered by the% character, followed by a conversion specifier.
+
+Some of these Specifiers are:
+.TP
+.BR %c
+- Print characters according to unsigned ASCII table and the result is sent to the standard output.
+.TP
+.BR %s
+- Prints a character string, as an argument a pointer to an array of type (string) is expected, the characters of the array are sent to the standard output until the null character is ignored in the output.
+.TP
+.BR %d, %i
+- Print the number associated with the argument, it becomes signed decimal notation.
+.TP
+.BR %%
+- If % is sent as a specifier, it will print the character %.
+.SH Examples
+.I Example
+
+.B #includes "holberton.h"
+
+int d;
+
+d = _printf ("Holberton %s, %s, %d, %d \n", school, month, day, year);
+
+.I Departure:
+
+Holbertonschool, July 22, 2020
+
+.SH SEE ALSO
+.B printf (3).
+.SH ERRORS
+I don't know about mistakes.
+.SH AUTHORS
+Milena Molina Montoya, Andres Sepulveda
+
+Holberton School Students
