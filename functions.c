@@ -49,8 +49,12 @@ int print_d(va_list list)
 	{
 		if(number[m] < 0)
 		{
-			*number = ((*number) * -1);
+			number[m] = ((number[m]) * -1);
 			_putchar('-');
+			for(; number[m] != '\0'; m++)
+			{
+				_putchar(number[m] + '0');
+			}
 		}
 		else
 		{
