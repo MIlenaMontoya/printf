@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 				n++;
 			}
 			get_f = get_op_func(format[n + 1]);
-			get_f(list);
+			count += get_f(list);
 			n++;
 		}
 		else
