@@ -16,6 +16,10 @@ int _printf(const char *format, ...)
 	{
 		if(format[n] == '%')
 		{
+			while(format[n + 1] == ' ')
+			{
+				n++;
+			}
 			get_f = get_op_func(format[n + 1]);
 			get_f(list);
 			n++;
