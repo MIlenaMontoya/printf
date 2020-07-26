@@ -2,18 +2,26 @@
 
 int _printf(const char *format, ...)
 {
-
-va_list list;
-
-
-	formats fun[] = {
-		{"c", print_c},
-                {"s", print_s},
-		{"d", print_d},
-                {"i", print_i},
-		{"%", print_mod},
-                {'\0', '\0'}
-	};
-
-va_start(list, format);
-va_end(list);
+	int (*get_f)(va_list);
+	int n;
+	int count;
+	va_list list;
+	va_start(list, format);
+	count = 0;
+	for(n = 0; format[n] != '\0'; n++)
+	{
+		if(format[n] == '%')
+		{
+			get_f = get_op_func(format[n + 1]);
+			get_f(list);
+			n++;
+		}
+		else
+		{
+			_putchar(format[n]);
+			count++;
+		}
+	}
+	va_end(list);
+	return(count);
+}
