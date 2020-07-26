@@ -5,19 +5,20 @@
  */
 int (*get_op_func(char t))(va_list)
 {
-	func tipo[] =
+	func f_type[] =
 	{
 		{'c', print_c},
 		{'s', print_s},
 		{'%', print_mod},
+		{'d', print_d},
 		{'\0', NULL}
 	};
 	int n = 0;
-	while (tipo[n].fp)
+	while (f_type[n].fp)
 	{
-		if (tipo[n].fp == t)
+		if (f_type[n].fp == t)
 		{
-			return (tipo[n].function);
+			return (f_type[n].function);
 		}
 		n++;
 	}
