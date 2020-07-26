@@ -13,14 +13,13 @@ int (*get_op_func(char t))(va_list)
 		{'d', print_d},
 		{'\0', NULL}
 	};
-	int n = 0;
-	while (f_type[n].fp)
+	int n;
+	for (n = 0; f_type[n].fp != '\0'; n++)
 	{
 		if (f_type[n].fp == t)
 		{
 			return (f_type[n].function);
 		}
-		n++;
 	}
 	return (0);
 }
