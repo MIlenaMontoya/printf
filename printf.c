@@ -8,6 +8,10 @@ int _printf(const char *format, ...)
 	va_list list;
 	va_start(list, format);
 	count = 0;
+	if (*format == NULL)
+	{
+		return(-1);
+	}
 	for(n = 0; format[n] != '\0'; n++)
 	{
 		if(format[n] == '%')
@@ -19,7 +23,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			_putchar(format[n]);
-			count++;
+			count ++;
 		}
 	}
 	va_end(list);
