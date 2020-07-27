@@ -51,6 +51,7 @@ int print_d(va_list list)
 	if (number < 0)
 	{
 		_putchar('-');
+		len ++;
 		m = ((number) * -1);
 		while (m > 9)
 		{
