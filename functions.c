@@ -42,25 +42,45 @@ int print_mod(__attribute__((unused))va_list list)
  */
 int print_d(va_list list)
 {
-	int *number = va_arg(list, int *);
+	int number = va_arg(list, int);
 	int m;
+	int len = 1;
+	int control = 1;
 
-	for(m = 0; number[m] != '\0'; m++)
+	m = number;
+	if(number < 0)
 	{
-		if(number[m] < 0)
+		_putchar('-');
+		m = ((number) * -1);
+		while(m > 9)
 		{
-			number[m] = ((number[m]) * -1);
-			_putchar('-');
-			for(; number[m] != '\0'; m++)
-			{
-				_putchar(number[m] + '0');
-			}
+			m /= 10;
+			len++;
+			control *= 10;
 		}
-		else
+		m = ((number) * -1);
+		while(control != 0)
 		{
-			_putchar(number[m] + '0');
+			_putchar((m / control) + '0');
+			m %= control;
+			control /= 10;
 		}
-
 	}
-	return(m);
+	else
+	{
+		while(m != 0)
+		{
+			m /= 10;
+			len++;
+			control *= 10;
+		}
+		m = number;
+		while(control != 0)
+		{
+			_putchar((m / control) + '0');
+			m %= control;
+			control /= 10;
+		}
+	}
+	return(len);
 }
