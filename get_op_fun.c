@@ -11,6 +11,7 @@ int (*get_op_func(char t))(va_list)
 		{'s', print_s},
 		{'%', print_mod},
 		{'d', print_d},
+		{'i', print_d},
 		{'\0', NULL}
 	};
 	int n;
