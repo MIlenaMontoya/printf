@@ -17,11 +17,11 @@ int print_s(va_list list)
 	char *s = va_arg(list, char *);
 	int n;
 
-	if(s == NULL)
+	if (s == NULL)
 	{
 		s = "(null)";
 	}
-	for(n = 0; s[n] != '\0'; n++)
+	for (n = 0; s[n] != '\0'; n++)
 	{
 		_putchar(s[n]);
 	}
@@ -48,18 +48,18 @@ int print_d(va_list list)
 	int control = 1;
 
 	m = number;
-	if(number < 0)
+	if (number < 0)
 	{
 		_putchar('-');
 		m = ((number) * -1);
-		while(m > 9)
+		while (m > 9)
 		{
 			m /= 10;
 			len++;
 			control *= 10;
 		}
 		m = ((number) * -1);
-		while(control != 0)
+		while (control != 0)
 		{
 			_putchar((m / control) + '0');
 			m %= control;
@@ -68,19 +68,19 @@ int print_d(va_list list)
 	}
 	else
 	{
-		while(m != 0)
+		while (m != 0)
 		{
 			m /= 10;
 			len++;
 			control *= 10;
 		}
 		m = number;
-		while(control != 0)
+		while (control != 0)
 		{
 			_putchar((m / control) + '0');
 			m %= control;
 			control /= 10;
 		}
 	}
-	return(len);
+	return (len);
 }
