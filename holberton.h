@@ -16,7 +16,7 @@ int print_c(va_list list);
 int print_s(va_list list);
 int print_d(va_list list);
 int print_i(va_list list);
-int print_mod(va_list list);
+int print_mod(__attribute__((unused))va_list list);
 int (*get_op_func(char t))(va_list);
 
 #endif /*Header holberton.h*/
