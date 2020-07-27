@@ -54,41 +54,25 @@ int print_d(va_list list)
 	int len = 0;
 	int control = 1;
 
-	m = number;
 	if (number < 0)
 	{
 		_putchar('-');
 		len++;
-		m = ((number) * -1);
-		while (m > 9)
-		{
-			m /= 10;
-			len++;
-			control *= 10;
-		}
-		m = ((number) * -1);
-		while (control != 0)
-		{
-			_putchar((m / control) + '0');
-			m %= control;
-			control /= 10;
-		}
+		number *= -1;
 	}
-	else
+	m = number;
+	while (m > 9)
 	{
-		while (m > 9)
-		{
-			m /= 10;
-			len++;
-			control *= 10;
-		}
-		m = number;
-		while (control != 0)
-		{
-			_putchar((m / control) + '0');
-			m %= control;
-			control /= 10;
-		}
+		m /= 10;
+		len++;
+		control *= 10;
+	}
+	m = number;
+	while (control != 0)
+	{
+		_putchar((m / control) + '0');
+		m %= control;
+		control /= 10;
 	}
 	return (len);
 }
