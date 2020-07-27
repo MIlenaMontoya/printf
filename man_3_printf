@@ -12,7 +12,7 @@ int _printf (const char * format, ...)
 .B _printf
 .I FORMAT (String) [ARGUMENT] ...
 .SH DESCRIPTION
-printf receives a number of parameters. The first parameter is fixed in the format string. This carries the text to be printed.
+printf receives a series of parameters. The first parameter is set in the format string with the specifiers that are assigned according to the type of data that you want to print, all of this in parentheses and double quotes, followed by a comma and the necessary arguments are added to what has been previously specified. in the function. And if everything is fine print the past parameters.
 
 
 .B This function is compiled with gcc flags
@@ -28,7 +28,7 @@ If the parameters given to the function fail, its return value is
 
 It is a character string that begins and ends with double quotes, it is made up of 0 or more directives, for each format order it must have an argument, so the identifier must be related to the type of variable in the argument.
 .SH Conversion Specifier
-Each conversion specification is entered by the% character, followed by a conversion specifier.
+Each conversion specification is entered by the % character, followed by a conversion specifier.
 
 Some of these Specifiers are:
 .TP
@@ -46,7 +46,7 @@ Some of these Specifiers are:
 .SH Examples
 .I Example
 
-.B #includes "holberton.h"
+.B #include "holberton.h"
 
 int d;
 
