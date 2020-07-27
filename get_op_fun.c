@@ -1,12 +1,12 @@
 #include "holberton.h"
 /**
  * get_op_func - gets the function for the format
- *
+ * @t: format symbol
+ * Return: returns the format specific function
  */
 int (*get_op_func(char t))(va_list)
 {
-	func f_type[] =
-	{
+	func f_type[] = {
 		{'c', print_c},
 		{'s', print_s},
 		{'%', print_mod},
@@ -15,6 +15,7 @@ int (*get_op_func(char t))(va_list)
 		{'\0', NULL}
 	};
 	int n;
+
 	for (n = 0; f_type[n].fp != '\0'; n++)
 	{
 		if (f_type[n].fp == t)

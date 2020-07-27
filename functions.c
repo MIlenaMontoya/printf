@@ -3,15 +3,19 @@
 /**
  * print_c - prints a character
  * @list: list of arguments
+ * Return: number of printed characters
  */
 int print_c(va_list list)
 {
 	char c = va_arg(list, char *);
+
 	_putchar(c);
 	return (1);
 }
-/** print_s - prints a string
+/**
+ * print_s - prints a string
  * @list: list of arguments
+ * Return: number of printed characters
  */
 int print_s(va_list list)
 {
@@ -28,8 +32,10 @@ int print_s(va_list list)
 	}
 	return (n);
 }
-/** print_mod - prints the '%' character
+/**
+ * print_mod - prints the '%' character
  * @list: list of arguments
+ * Return: number of printed characters
  */
 int print_mod(__attribute__((unused))va_list list)
 {
@@ -39,7 +45,7 @@ int print_mod(__attribute__((unused))va_list list)
 /**
  * print_d - prints a decimal
  * @list: list of arguments
- * Return:
+ * Return: number of printed characters
  */
 int print_d(va_list list)
 {
@@ -52,7 +58,7 @@ int print_d(va_list list)
 	if (number < 0)
 	{
 		_putchar('-');
-		len ++;
+		len++;
 		m = ((number) * -1);
 		while (m > 9)
 		{
