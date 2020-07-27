@@ -50,7 +50,7 @@ int print_mod(__attribute__((unused))va_list list)
 int print_d(va_list list)
 {
 	int number = va_arg(list, int);
-	int m;
+	unsigned int m;
 	int len = 1;
 	int control = 1;
 
