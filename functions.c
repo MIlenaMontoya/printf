@@ -76,7 +76,7 @@ int print_d(va_list list)
 	}
 	else
 	{
-		while (m != 0)
+		while (m > 9)
 		{
 			m /= 10;
 			len++;
