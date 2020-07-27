@@ -51,7 +51,7 @@ int print_d(va_list list)
 {
 	int number = va_arg(list, int);
 	int m;
-	int len = 0;
+	int len = 1;
 	int control = 1;
 
 	if (number < 0)
