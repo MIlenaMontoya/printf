@@ -1,22 +1,29 @@
 #include "holberton.h"
 
+/**
+ * _printf - prints the format string
+ * @format: the string to be printed
+ * Return: number of printed characters
+ */
+
 int _printf(const char *format, ...)
 {
 	int (*get_f)(va_list);
 	int n;
 	int count;
 	va_list list;
+
 	va_start(list, format);
 	count = 0;
 	if (format == NULL)
 	{
-		return(-1);
+		return (-1);
 	}
-	for(n = 0; format[n] != '\0'; n++)
+	for (n = 0; format[n] != '\0'; n++)
 	{
-		if(format[n] == '%')
+		if (format[n] == '%')
 		{
-			while(format[n + 1] == ' ' || format[n + 1] == '\t')
+			while (format[n + 1] == ' ' || format[n + 1] == '\t')
 			{
 			n++;
 			}
@@ -27,10 +34,10 @@ int _printf(const char *format, ...)
 		else
 		{
 			_putchar(format[n]);
-			count ++;
+			count++;
 		}
 
 	}
 	va_end(list);
-	return(count);
+	return (count);
 }
