@@ -6,7 +6,8 @@
  */
 int print_c(va_list list)
 {
-	_putchar(va_arg(list, int));
+	char c = va_arg(list, char *);
+	_putchar(c);
 	return (1);
 }
 /** print_s - prints a string
@@ -44,7 +45,7 @@ int print_d(va_list list)
 {
 	int number = va_arg(list, int);
 	int m;
-	int len = 1;
+	int len = 0;
 	int control = 1;
 
 	m = number;
