@@ -4,11 +4,17 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
+
+/**
+* struct function_printf - Structure
+* @fp: symbol.
+* @function: function.
+*/
 typedef struct function_printf
 {
 char fp;
 int (*function)(va_list);
-}func;
+} func;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
