@@ -25,18 +25,24 @@ int _printf(const char *format, ...)
 		{
 			while (format[n + 1] == ' ' || format[n + 1] == '\t')
 			{
-			n++;
+				n++;
 			}
-			get_f = get_op_func(format[n + 1]);
-			count += get_f(list);
-			n++;
+			if (format[n + 1] == '\0')
+			{
+				return(-1);
+			}
+			else
+			{
+				get_f = get_op_func(format[n + 1]);
+				count += get_f(list);
+				n++;
+			}
 		}
 		else
 		{
 			_putchar(format[n]);
 			count++;
 		}
-
 	}
 	va_end(list);
 	return (count);
