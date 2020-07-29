@@ -34,8 +34,16 @@ int _printf(const char *format, ...)
 			else
 			{
 				get_f = get_op_func(format[n + 1]);
-				count += get_f(list);
-				n++;
+				if(get_f != '\0')
+				{
+					count += get_f(list);
+					n++;
+				}
+				else
+				{
+					_putchar('%');
+					count += 1;
+				}
 			}
 		}
 		else

@@ -22,10 +22,6 @@ int (*get_op_func(char t))(va_list)
 		{
 			return (f_type[n].function);
 		}
-		else
-		{
-			return (0);
-		}
 	}
 	return (0);
 }
